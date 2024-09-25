@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo neutro */
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #15B392; /* Cor dos títulos */
+    font-size: 2.5em;
+}
+
+.output-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#constructed-phrase {
+    font-size: 24px;
+    min-height: 50px;
+    margin-bottom: 20px;
+    color: #54C392; /* Cor do texto */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #73EC8B; /* Cor dos botões */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #54C392; /* Cor ao passar o mouse nos botões */
+    transform: scale(1.05);
+}
+
+.alphabet-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.alphabet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.letter {
+    cursor: pointer;
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: #fff; /* Fundo branco para as letras */
+}
+
+.letter:hover {
+    transform: scale(1.1);
+    border-color: #54C392; /* Bordas em verde ao passar o mouse */
+}
+
+.letter img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #f4f4f4; /* Cor de fundo do rodapé */
+    text-align: center;
+    border-top: 1px solid #ddd; /* Linha de separação */
+}
+
+footer p {
+    color: #333; /* Cor do texto */
+    font-size: 16px;
+}
