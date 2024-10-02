@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfabeto em Língua de Sinais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo neutro */
+    padding: 20px;
+    text-align: center;
+}
+
+#gif {
+    width: 100px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #15B392; /* Cor dos títulos */
+    font-size: 2.5em;
+}
+
+.output-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#constructed-phrase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Alinha as imagens no centro */
+    gap: 10px; /* Espaçamento entre as imagens */
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #15B392; /* Cor da borda do input */
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
+.letter:hover {
+    transform: scale(1.1);
+    border-color: #54C392; /* Bordas em verde ao passar o mouse */
+}
+
+.letter img {
+    width: 90px;
+    max-width: 92px;
+
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #f4f4f4; /* Cor de fundo do rodapé */
+    text-align: center;
+    border-top: 1px solid #ddd; /* Linha de separação */
+}
+
+footer p {
+    color: #333; /* Cor do texto */
+    font-size: 16px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Alfabeto em Língua de Sinais</h1>
+
+        <input type="text" id="input-text" placeholder="Digite sua palavra aqui">
+
+        <div class="output-area">
+            <h2>Frase Construída:</h2>
+            <div id="constructed-phrase"></div>
+        </div>
+        <div>
+            <a href="index.html"><button>Voltar a página</button></a>
+        </div>
+    </div>
+    <footer>
+        <p>Cralinhos Websites</p>
+        <img src="nerd-emoji.gif" alt="">
+        <img id="gif" src="nerd-gif.gif">
+    </footer>
+    <script>
+        document.getElementById("input-text").addEventListener("input", function() {
+    const inputText = this.value.toUpperCase();
+    const constructedPhrase = document.getElementById("constructed-phrase");
+
+    constructedPhrase.innerHTML = "";
+    if (inputText.length === 0) {
+        return; 
+    }
+
+    for (let char of inputText) {
+        // Verifica se o caractere é um espaço
+        if (char === ' ') {
+            constructedPhrase.appendChild(document.createTextNode('\u00A0')); // Adiciona um espaço em branco
+            continue; // Ignora a iteração atual
+        }
+
+        const letterDiv = document.createElement("div");
+        letterDiv.classList.add("letter");
+
+        const img = document.createElement("img");
+        img.src = char === "Ç" ? "Ç.png" : `${char}.png`; // Para 'Ç', usar imagem específica
+        img.alt = `${char} em Língua de Sinais`;
+
+        letterDiv.appendChild(img);
+        constructedPhrase.appendChild(letterDiv);
+    }
+});
+
+document.getElementById("clear-btn").addEventListener("click", function() {
+    document.getElementById("input-text").value = "";
+    document.getElementById("constructed-phrase").innerHTML = "";
+});
+
+    </script>
+</body>
+</html>
