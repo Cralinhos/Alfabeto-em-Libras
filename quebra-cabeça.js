@@ -1,7 +1,7 @@
 // Array de desafios: cada desafio tem uma palavra e a imagem correspondente
 const challenges = [
     { word: ['C', 'A', 'S', 'A'], image: 'img-casa.png' },
-    { word: ['G', 'A', 'T', 'O'], image: 'GATO-PNG.png' },
+    { word: ['G', 'A', 'T', 'O'], image: 'GATO.png'},
     { word: ['C', 'A', 'R', 'R', 'O'], image: 'carro.png' },
     { word: ['P', 'A', 'T', 'O'], image: 'pato.jpg' }
 ];
