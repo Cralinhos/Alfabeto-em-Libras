@@ -121,6 +121,33 @@ document.getElementById('close-tutorial').onclick = function() {
     tutorial.classList.add('hidden');
 };
 
+// Função para embaralhar um array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Função para embaralhar as letras na página
+function shuffleLetters() {
+    const alphabet = document.querySelector('.alphabet');
+    const letters = Array.from(alphabet.children); // Converte HTMLCollection em Array
+
+    // Embaralha as letras
+    const shuffledLetters = shuffleArray(letters);
+
+    // Remove letras do DOM
+    alphabet.innerHTML = '';
+
+    // Adiciona as letras embaralhadas de volta ao DOM
+    shuffledLetters.forEach(letter => alphabet.appendChild(letter));
+}
+
+// Chama a função de embaralhamento ao carregar a página
+window.onload = shuffleLetters;
+
 
 // Carregar o primeiro desafio ao iniciar o jogo
 loadChallenge();
