@@ -61,12 +61,15 @@ button {
 }
 
 .bot{
-    padding-top: 5px;
+    padding-bottom: 25px;
 }
+.link {
+    background-color: #2e4d4d /* Cor dos botões */
 
+}
 button:hover {
-    background-color: #36b594; /* Cor ao passar o mouse */
-    transform: scale(1.05);
+    background-color: #47927e; /* Cor ao passar o mouse */
+    transform: scale(1.01);
 }
 
 .alphabet-grid {
