@@ -52,9 +52,19 @@ h1 {
 #constructed-phrase {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Alinha as imagens no centro */
-    gap: 10px; /* Espaçamento entre as imagens */
+    justify-content: center;
+    gap: 10px;
+    max-width: 100%; /* Garante que o container não fique maior que a largura da tela */
+    overflow-x: auto; /* Adiciona rolagem horizontal se o conteúdo exceder a largura */
 }
+
+#constructed-phrase div {
+    flex-grow: 1;
+    flex-basis: 150px; /* Largura mínima que cada div deve ter antes de quebrar a linha */
+    min-width: 100px; /* Garante que as divs não fiquem muito pequenas */
+    max-width: 200px; /* Limita o tamanho máximo das divs */
+}
+
 
 
 input[type="text"] {
