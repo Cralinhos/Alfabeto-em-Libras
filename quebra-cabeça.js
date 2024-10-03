@@ -106,7 +106,7 @@ function showMessage(message, type) {
     messageBox.style.color = type === 'success' ? '#155724' : '#721c24'; // Cor do texto
     setTimeout(() => {
         messageBox.classList.add('hidden'); // Esconde a mensagem após 3 segundos
-    }, 500);
+    }, 5000);
 }
 
 // Função para mostrar o tutorial ao carregar a página
