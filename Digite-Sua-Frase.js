@@ -8,7 +8,6 @@ document.getElementById("input-text").addEventListener("input", function() {
     }
 
     for (let char of inputText) {
-        // Verifica se o caractere é um espaço
         if (char === ' ') {
             constructedPhrase.appendChild(document.createTextNode('\u00A0')); // Adiciona um espaço em branco
             continue; // Ignora a iteração atual
@@ -18,15 +17,10 @@ document.getElementById("input-text").addEventListener("input", function() {
         letterDiv.classList.add("letter");
 
         const img = document.createElement("img");
-        img.src = char === "Ç" ? "Ç.png" : `${char}.png`; // Para 'Ç', usar imagem específica
+        img.src = char === "Ç" ? "Alfabeto Pagina Principal/Ç.png" : `Alfabeto Pagina Principal/${char}.png`;
         img.alt = `${char} em Língua de Sinais`;
 
         letterDiv.appendChild(img);
         constructedPhrase.appendChild(letterDiv);
     }
-});
-
-document.getElementById("clear-btn").addEventListener("click", function() {
-    document.getElementById("input-text").value = "";
-    document.getElementById("constructed-phrase").innerHTML = "";
 });
