@@ -34,7 +34,6 @@ let currentLetter;
 const scoreDisplay = document.getElementById('score');
 const currentLetterImg = document.getElementById('current-letter');
 const optionsContainer = document.querySelector('.options');
-const nextButton = document.getElementById('next-btn');
 
 function getRandomLetter() {
     return letters[Math.floor(Math.random() * letters.length)];
@@ -67,21 +66,22 @@ function displayLetter() {
 function checkAnswer(selectedLetter) {
     if (selectedLetter === currentLetter.letter) {
         score++;
-        scoreDisplay.textContent = score;
-        alert('Correto!');
-
-        // Avança para a próxima letra automaticamente
-        displayLetter();
+        showMessage('Correto!', true);
     } else {
-        alert('Errado!');
+        score--; // Decrementa a pontuação por resposta errada
+        showMessage('Errado! Tente novamente.', false);
         removeWrongOption(selectedLetter);
+    }
+    scoreDisplay.textContent = score; // Atualiza a exibição da pontuação
+    if (selectedLetter === currentLetter.letter || optionsContainer.querySelectorAll('.option').length === 1) {
+        setTimeout(displayLetter, 2000); // Avança para a próxima letra após um tempo
     }
 }
 
 function removeWrongOption(wrongLetter) {
     const optionDivs = optionsContainer.querySelectorAll('.option');
     optionDivs.forEach(option => {
-        if (option.textContent !== currentLetter.letter && option.textContent === wrongLetter) {
+        if (option.textContent === wrongLetter) {
             option.remove(); // Remove a opção errada
         }
     });
@@ -89,10 +89,18 @@ function removeWrongOption(wrongLetter) {
     // Se sobrar apenas uma opção, essa é a correta
     const remainingOptions = optionsContainer.querySelectorAll('.option');
     if (remainingOptions.length === 1) {
-        alert('A única opção restante é a correta: ' + remainingOptions[0].textContent);
-        checkAnswer(remainingOptions[0].textContent); // Chama a função de verificação
+        const correctOption = remainingOptions[0].textContent;
+        showMessage('A única opção restante é a correta: ' + correctOption, true);
+        
+        // Desabilita a opção restante
+        remainingOptions[0].classList.add('disabled'); // Adiciona uma classe para estilização
+        remainingOptions[0].style.pointerEvents = 'none'; // Impede cliques
+        
+        checkAnswer(correctOption); // Chama a função de verificação
+        checkAnswer(correctOptionText);
     }
 }
+
 
 const messagePanel = document.getElementById('message-panel');
 
@@ -110,21 +118,6 @@ function showMessage(text, isCorrect) {
         }, 500); // Tempo para o fade out
     }, 2000);
 }
-
-function checkAnswer(selectedLetter) {
-    if (selectedLetter === currentLetter.letter) {
-        score++;
-        scoreDisplay.textContent = score;
-        showMessage('Correto!', true);
-
-        // Avança para a próxima letra automaticamente
-        setTimeout(displayLetter, 2000); // Espera um pouco antes de avançar
-    } else {
-        showMessage('Errado! Tente novamente.', false);
-        removeWrongOption(selectedLetter);
-    }
-}
-
 
 // Inicia o jogo
 displayLetter();
