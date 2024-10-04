@@ -51,7 +51,7 @@ h1 {
 }
 
 button {
-    padding: 12px 24px; /* Aumenta o padding */
+    padding: 16px 24px; /* Aumenta o padding */
     font-size: 20px; /* Aumenta o tamanho da fonte */
     background-color: #4ad0a0; /* Cor dos botões */
     color: white;
@@ -72,6 +72,14 @@ button:hover {
     justify-content: center; /* Centraliza os itens horizontalmente */
     margin-bottom: 20px; /* Espaço abaixo da grid */
     max-width: 100%; /* Usa toda a largura disponível */
+}
+
+#check-word{
+    background-color: #2e4d4d;
+}
+
+#check-word:hover{
+    background-color: #47927e;
 }
 
 .alphabet-grid > div {
