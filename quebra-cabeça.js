@@ -31,11 +31,7 @@ document.querySelectorAll('.letter').forEach(letterElement => {
     });
 });
 
-// Limpar frase
-document.getElementById('clear-btn').addEventListener('click', () => {
-    selectedLetters = [];
-    constructedPhraseDiv.innerHTML = '';
-});
+
 
 // Próximo desafio
 function nextChallenge() {
