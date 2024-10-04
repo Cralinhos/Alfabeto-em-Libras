@@ -74,7 +74,7 @@ function checkAnswer(selectedLetter) {
     }
     scoreDisplay.textContent = score; // Atualiza a exibição da pontuação
     if (selectedLetter === currentLetter.letter || optionsContainer.querySelectorAll('.option').length === 1) {
-        setTimeout(displayLetter, 2000); // Avança para a próxima letra após um tempo
+        setTimeout(displayLetter, 500); // Avança para a próxima letra após um tempo
     }
 }
 
