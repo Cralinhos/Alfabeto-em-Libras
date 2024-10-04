@@ -3,7 +3,7 @@ const challenges = [
     { word: ['C', 'A', 'S', 'A'], image: 'img-casa.png' },
     { word: ['G', 'A', 'T', 'O'], image: 'Gato.png'},
     { word: ['C', 'A', 'R', 'R', 'O'], image: 'carro.png' },
-    { word: ['P', 'A', 'T', 'O'], image: 'pato.jpg' }
+    { word: ['P', 'A', 'T', 'O'], image: 'pato.png' }
 ];
 
 let currentChallengeIndex = 0;
@@ -75,6 +75,8 @@ document.getElementById('check-word').addEventListener('click', () => {
         lives--; // Reduz a vida
         console.log(`Vidas restantes: ${lives}`); // Para debug
         updateHearts(); // Atualiza a exibição das vidas
+        selectedLetters = []; // Limpa as letras selecionadas
+        constructedPhraseDiv.innerHTML = ''; // Limpa a frase construída
         if (lives === 0) {
             showMessage('Game Over! Você perdeu todas as vidas.', 'error');
             setTimeout(() => {
