@@ -17,7 +17,20 @@ document.getElementById("input-text").addEventListener("input", function() {
         letterDiv.classList.add("letter");
 
         const img = document.createElement("img");
-        img.src = char === "Ç" ? "Alfabeto Pagina Principal/Ç.png" : `Alfabeto Pagina Principal/${char}.png`;
+        
+        // Verifica se o caractere é um número
+        if (!isNaN(char)) {
+            img.src = `Números em Libras/${char}.png`;
+        } 
+        // Verifica se o caractere é "Ç"
+        else if (char === "Ç") {
+            img.src = "Alfabeto Pagina Principal/Ç.png";
+        } 
+        // Trata qualquer outro caractere alfabético
+        else {
+            img.src = `Alfabeto Pagina Principal/${char}.png`;
+        }
+
         img.alt = `${char} em Língua de Sinais`;
 
         letterDiv.appendChild(img);

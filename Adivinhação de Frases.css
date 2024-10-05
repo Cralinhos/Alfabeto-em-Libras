@@ -108,6 +108,7 @@ button:hover {
     background-color: #2e4d4d; /* Cor dos botões */
 }
 
+
 .alphabet-grid {
     display: flex;
     flex-wrap: wrap;
