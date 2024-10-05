@@ -71,10 +71,12 @@ document.getElementById('check-word').addEventListener('click', () => {
     if (arraysEqual(selectedLetters, currentWord)) {
         showMessage('Parabéns! Você acertou.', 'success');
         nextChallenge();
+        shuffleLetters();
     } else {
         lives--; // Reduz a vida
         console.log(`Vidas restantes: ${lives}`); // Para debug
         updateHearts(); // Atualiza a exibição das vidas
+        shuffleLetters();
         selectedLetters = []; // Limpa as letras selecionadas
         constructedPhraseDiv.innerHTML = ''; // Limpa a frase construída
         if (lives === 0) {
