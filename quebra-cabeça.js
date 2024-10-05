@@ -71,10 +71,12 @@ document.getElementById('check-word').addEventListener('click', () => {
     if (arraysEqual(selectedLetters, currentWord)) {
         showMessage('Parabéns! Você acertou.', 'success');
         nextChallenge();
+        shuffleLetters();
     } else {
         lives--; // Reduz a vida
         console.log(`Vidas restantes: ${lives}`); // Para debug
         updateHearts(); // Atualiza a exibição das vidas
+        shuffleLetters();
         selectedLetters = []; // Limpa as letras selecionadas
         constructedPhraseDiv.innerHTML = ''; // Limpa a frase construída
         if (lives === 0) {
@@ -106,18 +108,6 @@ function showMessage(message, type) {
         messageBox.classList.add('hidden'); // Esconde a mensagem após 3 segundos
     }, 5000);
 }
-
-// Função para mostrar o tutorial ao carregar a página
-window.onload = function() {
-    const tutorial = document.getElementById('tutorial');
-    tutorial.classList.remove('hidden'); // Remove a classe 'hidden' para mostrar o tutorial
-};
-
-// Função para fechar o tutorial
-document.getElementById('close-tutorial').onclick = function() {
-    const tutorial = document.getElementById('tutorial');
-    tutorial.classList.add('hidden');
-};
 
 // Função para embaralhar um array
 function shuffleArray(array) {

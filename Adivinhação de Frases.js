@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedback = document.getElementById('feedback');
     const userInput = document.getElementById('user-input');
     const submitBtn = document.getElementById('submit-btn');
-    const signContainer = document.getElementById('sign-container'); // Container que vai conter os sinais
+    const signContainer = document.getElementById('sign-container');
+    const showAnswersButton = document.getElementById('show-answers'); // Botão para mostrar respostas
 
     const phrases = [
         { signs: ['A', 'M', 'O', 'R'], phrase: 'AMOR' },
@@ -81,11 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { signs: ['T', 'E', 'M', 'E', 'R', 'A', 'R'], phrase: 'TEMERAR' },
     ];
     
-    
-
     let currentPhrase = {};
     
-
     // Função para iniciar uma nova frase
     function loadNewPhrase() {
         feedback.textContent = '';
@@ -118,13 +116,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // Espera 3 segundos antes de carregar uma nova fase
             setTimeout(() => {
                 loadNewPhrase();
-            }, 3000); // 3000 ms = 3 segundos
+            }, 1000); // 3000 ms = 3 segundos
         } else {
             feedback.textContent = 'Tente novamente.';
             feedback.classList.add('wrong');
             feedback.classList.remove('correct');
         }
     });
+
+    showAnswersButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Impede a atualização da página
+        event.stopPropagation();
+        showAnswers();
+    });
+
+    function showAnswers() {
+        const signImages = signContainer.querySelectorAll('img');
+        signImages.forEach((img, index) => {
+            const sign = currentPhrase.signs[index];
+            img.src = `Alfabeto Pagina Principal/${sign}.png`;
+        });
+        answerShown = true;
+    }
 
     // Carrega a primeira frase ao carregar a página
     loadNewPhrase()
