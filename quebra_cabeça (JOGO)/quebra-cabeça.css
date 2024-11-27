@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #e9f5f2; /* Fundo neutro com leve tom verde */
+  padding: 20px;
+  text-align: center;
+}
+
+#gif {
+  width: 100px;
+  margin: 20px 0; /* Margem ao redor do GIF */
+}
+
+.container {
+  max-width: 1900px; /* Flexibilidade com porcentagem */
+  margin: 0 auto;
+  padding: 2em; /* Adaptação com unidades relativas */
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 1em; /* Melhora a escala */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+  overflow: auto; /* Garante que o conteúdo não transborde */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #1a7a6d; /* Cor dos títulos */
+  font-size: 2.8em; /* Tamanho do título */
+  font-weight: 600; /* Peso do texto */
+}
+
+.output-area {
+  background-color: #fdfdfd; /* Tom leve de cinza */
+  padding: 25px; /* Aumenta o padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  margin-bottom: 30px;
+}
+
+#constructed-phrase {
+  font-size: 28px; /* Aumenta o tamanho do texto */
+  min-height: 50px;
+  margin-bottom: 20px;
+  color: #2e4d4d; /* Cor do texto */
+}
+
+button {
+  padding: 16px 24px; /* Aumenta o padding */
+  font-size: 20px; /* Aumenta o tamanho da fonte */
+  background-color: #4ad0a0; /* Cor dos botões */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #47927e; /* Cor ao passar o mouse */
+  transform: scale(1.01);
+}
+
+.alphabet-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não houver espaço */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  margin-bottom: 20px; /* Espaço abaixo da grid */
+  max-width: 100%; /* Usa toda a largura disponível */
+}
+
+#check-word {
+  background-color: #2e4d4d;
+}
+
+#check-word:hover {
+  background-color: #47927e;
+}
+
+.alphabet-grid > div {
+  flex: 8 1 60px; /* Largura fixa com flexibilidade para se ajustar ao espaço */
+  margin: 10px; /* Espaçamento entre os itens */
+  padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto dentro das divs */
+  transition: transform 0.2s ease; /* Transição para efeito de hover */
+}
+
+.alphabet {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px; /* Espaço entre elementos */
+}
+
+.letter {
+  cursor: pointer;
+  border: 2px solid #ccc; /* Cor das bordas */
+  padding: 10px; /* Aumenta o padding */
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  background-color: #ffffff; /* Fundo branco */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.letter:hover {
+  transform: scale(1.1);
+  border-color: #36b594; /* Bordas em verde ao passar o mouse */
+}
+
+.letter img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 40px; /* Espaço acima do rodapé */
+  padding: 20px 0; /* Padding do rodapé */
+  background-color: #e9f5f2; /* Cor de fundo do rodapé */
+  text-align: center;
+  border-top: 2px solid #ccc; /* Linha de separação */
+}
+
+footer p {
+  color: #333; /* Cor do texto */
+  font-size: 16px;
+}
+
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease; /* Transição suave */
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #73ec8b; /* Cor da borda */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Estilo para os corações */
+.coracao {
+  width: 90px; /* Tamanho do coração */
+  height: 90px; /* Tamanho do coração */
+  margin: 0 5px; /* Espaçamento entre os corações */
+  display: inline-block; /* Exibe os corações lado a lado */
+}
+
+/* Estilo para o tutorial */
+#tutorial {
+  background-color: #f9f9c5;
+  border: 2px solid #d1c600;
+}
+
+.lado {
+  display: flex;
+  justify-content: space-between; /* Espaça igualmente entre os itens */
+  flex-wrap: wrap; /* Permite que as divs se movam para a próxima linha se não houver espaço */
+  margin: 20px 0; /* Adiciona margem acima e abaixo */
+}
+
+.lado > div {
+  /* Supondo que cada item esteja dentro de uma div */
+  flex: 1; /* Permite que cada div ocupe o mesmo espaço */
+  min-width: 200px; /* Largura mínima para manter a legibilidade */
+  margin: 10px; /* Espaçamento entre as divs */
+  padding: 15px; /* Espaçamento interno */
+  background-color: #f9f9f9; /* Fundo claro para as divs */
+  border: 1px solid #ccc; /* Borda suave */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease; /* Transição para efeito de hover */
+}
+
+.lado > div:hover {
+  transform: scale(1.02); /* Leve aumento ao passar o mouse */
+}
+
+.challenge-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vida {
+  font-size: 2rem;
+}

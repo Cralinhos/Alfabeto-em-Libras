@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicionário em Libras</title>
+    <link rel="stylesheet" href="Dicionário_libras.css" />
+    <link rel="shortcut icon" href="img/Icon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <form autocomplete="off">
+      <div class="header">
+        <div class="container">
+          <h1>Dicionário em Libras</h1>
+
+          <!-- Campo de entrada para digitar palavras -->
+          <input
+            type="text"
+            id="word-input"
+            placeholder="Digite a palavra aqui"
+          />
+
+          <!-- Botão para buscar vídeo -->
+          <button type="button" id="search-video-btn">Buscar Vídeo</button>
+
+          <!-- Área de exibição de vídeo -->
+          <div class="output-area">
+            <h2>Resultado</h2>
+            <div id="video-output"></div>
+          </div>
+
+          <!-- Botão para voltar à página inicial -->
+          <div>
+            <a href="../pagina_Principal/index.html">
+              <button type="button">Página Inicial</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+    <footer>
+      <p>Cralinhos Websites</p>
+    </footer>
+    <script src="Dicionário_libras.js"></script>
+  </body>
+</html>

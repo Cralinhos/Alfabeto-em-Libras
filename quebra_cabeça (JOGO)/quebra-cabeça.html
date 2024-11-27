@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quebra-cabeça de Libras</title>
+    <link rel="stylesheet" href="quebra-cabeça.css" />
+    <link rel="shortcut icon" href="img/Icon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quebra-cabeça de Libras</h1>
+
+      <div class="output-area">
+        <h2>Forme a palavra</h2>
+        <div id="constructed-phrase"></div>
+        <button id="check-word">Verificar Palavra</button>
+        <a href="../pagina_Principal/index.html"><button type="button">Página Inicial</button></a>
+      </div>
+
+      <div class="lives-area">
+        <h3 class="vida">Vidas</h3>
+        <div id="hearts-container">
+          <img
+            src="img/coração.png"
+            class="coracao"
+            alt="Coração"
+            id="heart1"
+          />
+          <img
+            src="img/coração.png"
+            class="coracao"
+            alt="Coração"
+            id="heart2"
+          />
+          <img
+            src="img/coração.png"
+            class="coracao"
+            alt="Coração"
+            id="heart3"
+          />
+        </div>
+      </div>
+
+      <div id="message-box" class="message-box hidden"></div>
+
+      <div class="lado">
+        <div class="challenge-area">
+          <img
+            id="challenge-image"
+            src="../img/img-casa.png"
+            alt="Imagem do desafio atual"
+          />
+        </div>
+
+        <div class="alphabet-grid">
+          <div class="alphabet">
+            <div class="letter" data-letter="A">
+              <img
+                src="../Alfabeto Quebra Cabeça/A.png"
+                alt="A em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="B">
+              <img
+                src="../Alfabeto Quebra Cabeça/B.png"
+                alt="B em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="C">
+              <img
+                src="../Alfabeto Quebra Cabeça/C.png"
+                alt="C em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="D">
+              <img
+                src="../Alfabeto Quebra Cabeça/D.png"
+                alt="D em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="E">
+              <img
+                src="../Alfabeto Quebra Cabeça/E.png"
+                alt="E em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="F">
+              <img
+                src="../Alfabeto Quebra Cabeça/F.png"
+                alt="F em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="G">
+              <img
+                src="../Alfabeto Quebra Cabeça/G.png"
+                alt="G em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="H">
+              <img
+                src="../Alfabeto Quebra Cabeça/H.png"
+                alt="H em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="I">
+              <img
+                src="../Alfabeto Quebra Cabeça/I.png"
+                alt="I em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="J">
+              <img
+                src="../Alfabeto Quebra Cabeça/J.png"
+                alt="J em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="K">
+              <img
+                src="../Alfabeto Quebra Cabeça/K.png"
+                alt="K em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="L">
+              <img
+                src="../Alfabeto Quebra Cabeça/L.png"
+                alt="L em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="M">
+              <img
+                src="../Alfabeto Quebra Cabeça/M.png"
+                alt="M em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="N">
+              <img
+                src="../Alfabeto Quebra Cabeça/N.png"
+                alt="N em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="O">
+              <img
+                src="../Alfabeto Quebra Cabeça/O.png"
+                alt="O em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="P">
+              <img
+                src="../Alfabeto Quebra Cabeça/P.png"
+                alt="P em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="Q">
+              <img
+                src="../Alfabeto Quebra Cabeça/Q.png"
+                alt="Q em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="R">
+              <img
+                src="../Alfabeto Quebra Cabeça/R.png"
+                alt="R em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="S">
+              <img
+                src="../Alfabeto Quebra Cabeça/S.png"
+                alt="S em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="T">
+              <img
+                src="../Alfabeto Quebra Cabeça/T.png"
+                alt="T em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="U">
+              <img
+                src="../Alfabeto Quebra Cabeça/U.png"
+                alt="U em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="V">
+              <img
+                src="../Alfabeto Quebra Cabeça/V.png"
+                alt="V em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="W">
+              <img
+                src="../Alfabeto Quebra Cabeça/W.png"
+                alt="W em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="X">
+              <img
+                src="../Alfabeto Quebra Cabeça/X.png"
+                alt="X em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="Y">
+              <img
+                src="../Alfabeto Quebra Cabeça/Y.png"
+                alt="Y em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="Z">
+              <img
+                src="../Alfabeto Quebra Cabeça/Z.png"
+                alt="Z em Língua de Sinais"
+              />
+            </div>
+            <div class="letter" data-letter="Ç">
+              <img
+                src="../Alfabeto Quebra Cabeça/Ç.png"
+                alt="Ç em Língua de Sinais"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Cralinhos Websites</p>
+    </footer>
+    <script src="quebra-cabeça.js"></script>
+  </body>
+</html>

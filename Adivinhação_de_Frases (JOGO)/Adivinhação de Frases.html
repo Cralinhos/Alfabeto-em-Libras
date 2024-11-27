@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinhação de Frases</title>
+    <link rel="stylesheet" href="Adivinhação de Frases.css" />
+  </head>
+  <body>
+    <form autocomplete="off">
+      <div class="container">
+        <h1>Adivinhação de Frases em Libras</h1>
+        <p>Veja os sinais e tente adivinhar a frase correta</p>
+
+        <!-- Área onde os sinais aparecerão -->
+        <div class="signs-area" id="sign-container">
+          <!-- Sinais serão inseridos dinamicamente aqui -->
+        </div>
+
+        <!-- Área para input da frase do usuário -->
+        <div class="output-area">
+          <h2>Digite a Frase</h2>
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Digite sua resposta aqui"
+          />
+          <button id="submit-btn" type="button">Enviar Resposta</button>
+          <button id="show-answers">Mostrar Resposta</button>
+          <a href="../pagina_Principal/index.html"><button type="button">Página Inicial</button></a>
+        </div>
+
+        <!-- Feedback de Acerto/Erro -->
+        <div id="feedback"></div>
+      </div>
+    </form>
+
+    <footer>
+      <p>Cralinhos Websites</p>
+    </footer>
+
+    <!-- Script do jogo -->
+    <script src="Adivinhação de Frases.js"></script>
+  </body>
+</html>
