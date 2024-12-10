@@ -25,6 +25,15 @@ function loadChallenge() {
   constructedPhraseDiv.innerHTML = ""; // Limpa a frase montada do desafio anterior.
 }
 
+// Evento de clique no botão "Apagar Última Letra".
+document.getElementById("clear-letters").addEventListener("click", () => {
+  if (selectedLetters.length > 0) {
+    selectedLetters.pop(); // Remove a última letra do array.
+    constructedPhraseDiv.innerHTML = selectedLetters.join(" "); // Atualiza a exibição.
+  }
+});
+
+
 // Adiciona evento de clique em cada elemento de letra. 
 // Quando uma letra é clicada, ela é adicionada à lista "selectedLetters" e exibida no "constructedPhraseDiv".
 document.querySelectorAll(".letter").forEach((letterElement) => {
