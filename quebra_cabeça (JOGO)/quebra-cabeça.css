@@ -78,6 +78,14 @@ button:hover {
   background-color: #2e4d4d;
 }
 
+#clear-letters {
+  background-color: #2e4d4d;
+}
+
+#clear-letters:hover {
+  background-color: #47927e;
+}
+
 #check-word:hover {
   background-color: #47927e;
 }
